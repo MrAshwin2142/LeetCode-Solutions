@@ -18,7 +18,6 @@ public:
         temp.push_back(root->val);
         inorder(root->right,temp);
     }
-    
     vector<int> inorderTraversal(TreeNode* root) {
         vector <int> temp;
         inorder(root, temp);
