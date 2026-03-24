@@ -3,7 +3,7 @@ public:
     static vector<vector<int>> constructProductMatrix(vector<vector<int>>& grid) {
         const int N=12345, n=grid.size(), m=grid[0].size();
         vector<vector<int>> ans(n, vector<int>(m));
-        uint64_t pref=1, suf=1;
+        long long pref=1, suf=1;
         for(int i=0; i<n; i++)
             for(int j=0; j<m; j++){
                 ans[i][j]=pref;
