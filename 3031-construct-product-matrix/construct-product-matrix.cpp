@@ -14,7 +14,6 @@ public:
                 ans[i][j]=ans[i][j]*suf%N;
                 suf=suf*grid[i][j]%N;
             }
-            
         return ans;
     }
 };
