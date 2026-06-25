@@ -9,7 +9,7 @@ public:
                 int k=j+1;
                 int l=nums.size()-1;
                 while(k<l){
-                    double sum=(0.0 +nums[i]+nums[j]+nums[k]+nums[l]-target);
+                    double sum=(0.0 + nums[i]+nums[j]+nums[k]+nums[l]-target);
                     if(sum>0) l--;
                     else if(sum<0) k++;
                     else{
