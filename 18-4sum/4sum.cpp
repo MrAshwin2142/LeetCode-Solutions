@@ -1,27 +1,23 @@
 class Solution {
 public:
     vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        vector<vector<int>> ans;
+        set<vector<int>> st;
         int n=nums.size();
-        set<vector<int>> ans;
         sort(nums.begin(),nums.end());
-        for(int i=0;i<n-1;i++){
+        for(int i=0;i<n;i++){
             for(int j=i+1;j<n;j++){
-                int k=j+1;
-                int l=nums.size()-1;
-                while(k<l){
-                    double sum=(0.0 + nums[i]+nums[j]+nums[k]+nums[l]-target);
-                    if(sum>0) l--;
-                    else if(sum<0) k++;
-                    else{
-                        ans.insert({nums[i],nums[j],nums[k],nums[l]});
-                        k++;
-                        l--;
-                        
-                    }
+                double need = 0.0+target -nums[i]-nums[j];
+                int a=j+1,b=n-1;
+                while(a<b){
+                    if(need-nums[a]-nums[b]==0){ 
+                        st.insert({nums[i],nums[j],nums[a],nums[b]}); a++;}
+                    else if(need-nums[a]-nums[b]>0) a++;
+                    else b--;
                 }
             }
         }
-        vector<vector<int>> p(ans.begin(),ans.end());
-        return p;
+        for(auto i:st) ans.push_back(i);
+        return ans;
     }
 };
