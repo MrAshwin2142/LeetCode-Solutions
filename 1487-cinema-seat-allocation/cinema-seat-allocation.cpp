@@ -7,7 +7,6 @@ public:
             mp[i[0]].push_back(i[1]);
         }
         int ans = 2*(n-mp.size());
-        
         for(auto i:mp){
             vector<bool> v(10,true);
             int t=0;
@@ -15,7 +14,7 @@ public:
             int p1 = (v[2] & v[3] & v[4] & v[5]);
             int p2 = (v[4] & v[5] & v[6] & v[7]);
             int p3 = (v[6] & v[7] & v[8] & v[9]);
-            if( p1 && p3) t=2;
+            if( p1 & p3) t=2;
             else if(p1 || p2 || p3) t=1;
             ans+=t;
         }
